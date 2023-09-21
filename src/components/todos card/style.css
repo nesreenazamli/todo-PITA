@@ -1,0 +1,32 @@
+.todo-card{
+    margin-top: 20px !important;
+    align-items: start !important;
+}
+
+.todo-card h2 {
+    text-align: left;
+    background: none !important;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0;
+}
+table tr:nth-child(1){
+    background: #457b9d;
+    color: #023047;
+}
+
+table tr {
+    margin: 10px 0;
+}
+
+table tr td, table tr th{
+    height: 30px;
+    padding: 10px;
+}
+table tr td {
+    text-align: center;
+    height: 30px;
+    padding: 20px;
+}
