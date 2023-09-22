@@ -1,8 +1,8 @@
 import React from 'react';
 import RowItem from "../row item";
 import "./style.css"
+function TodosCard({ data, setData }) {
 
-function TodosCard() {
     return (
         <div className="card todo-card">
            <h2>
@@ -14,11 +14,14 @@ function TodosCard() {
                     <th>Status</th>
                     <th>Close</th>
                 </tr>
-             <RowItem test />
-             <RowItem />
-             <RowItem test />
-             <RowItem />
-             <RowItem />
+                {data.map((item)=>
+                     <RowItem item={item} handelDelete={() => {
+                         const filtered = data.filter((el) => el.id !== item.id);
+                         setData(filtered)
+                     }
+
+                     }  />
+                )}
             </table>
         </div>
     );

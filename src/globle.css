@@ -24,3 +24,7 @@ body {
   align-items: center;
   background: #fff;
 }
+
+.w-33 {
+  width: 33%;
+}

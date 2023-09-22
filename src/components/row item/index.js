@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from "../button";
 import { FaTrashAlt } from "react-icons/fa";
 
-function RowItem() {
-    return (
-        <tr>
-            <td>test</td>
-            <td><Button className={"bg-green"} text={"11111"} /> </td>
-            <td><FaTrashAlt color={"#e63946"} cursor={"pointer"} /></td>
+function RowItem({ item, handelDelete }) {
+    const [status, setStatus] = useState(item.completed)
 
+    const handelStatus = () => {
+        if (item.completed === false) {
+            setStatus(true)
+        }
+
+    }
+
+    return (
+        <tr key={item.id}>
+            <td className="w-33">{item.title}</td>
+            <td><Button onclick={handelStatus} className={status ? "bg-green" : "bg-red"} text={status ? "Completed" : "Pending"} /> </td>
+            <td onClick={handelDelete}><FaTrashAlt color={"#e63946"} cursor={"pointer"}  /></td>
         </tr>
     );
 }
